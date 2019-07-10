@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DIT_ui.Tabs.BarcodeScanner" BackgroundColor="#082631"
+             Visual="Material">
+    <ContentPage.Title>Barkodu Tarat</ContentPage.Title>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+
+            <Label Text="Barkod okutmak istemezseniz barkodun altında bulunan kodu buraya giriniz." TextColor="White" HorizontalTextAlignment="Center" FontSize="25"  Margin="20,10,20,0" FontFamily="{StaticResource Oswald}"/>
+            <Entry x:Name="tb_barcode" FontFamily="{StaticResource Oswald}" BackgroundColor="Transparent" FontSize="25" Placeholder="Barkod No: "  HorizontalTextAlignment="Start" PlaceholderColor="White" TextColor="White" HorizontalOptions="FillAndExpand" Keyboard="Telephone" Margin="20,10,20,0"/>
+            <Button x:Name="btn_getwithcode" Text="Ürünü Getir" FontSize="20" FontFamily="{StaticResource Oswald}" BackgroundColor="Transparent" CornerRadius="25" TextColor="White" HeightRequest="50" Margin="20,10,20,0" Clicked="Btn_getwithcode_OnClicked"/>
+
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand">
+            <Label Text="VEYA" TextColor="White" HorizontalTextAlignment="Center" FontSize="50" FontFamily="{StaticResource Oswald}"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Orientation="Vertical"  VerticalOptions="StartAndExpand">
+
+            <Button x:Name="btn_openscanner" Text="Barkod Okuyucuyu Aç" FontSize="20" FontFamily="{StaticResource Oswald}" BackgroundColor="Transparent" CornerRadius="25" TextColor="White" HeightRequest="50" Margin="20,0,20,0" Clicked="Btn_openscanner_OnClicked"/>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

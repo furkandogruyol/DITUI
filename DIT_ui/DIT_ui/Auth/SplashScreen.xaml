@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DIT_ui.Auth.SplashScreen"
+             NavigationPage.HasNavigationBar="False" Visual="Material">
+
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="abs_lay" BackgroundColor="#082631">
+            <Image x:Name="img_logo" WidthRequest="200" HeightRequest="200" Source="LogTez.png"/>
+       </AbsoluteLayout>
+    </ContentPage.Content>
+
+</ContentPage>

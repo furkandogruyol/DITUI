@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DIT_ui.Tabs.Profile"
+             BackgroundColor="#082631"
+             Visual="Material">
+    <ContentPage.Title>Profil</ContentPage.Title>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Margin="0,20,0,0">
+                    <Image Source= "LogTez.png" WidthRequest="180" BackgroundColor="Transparent" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Aspect="AspectFit"/>
+                    <Label Text="Hoşgeldiniz" FontSize="35" FontFamily="{StaticResource BebasNeue-Regular}" TextColor="White"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label x:Name="lb_user" Text="." FontSize="50" FontFamily="{StaticResource BebasNeue-Regular}" TextColor="White"  VerticalOptions="Center" Margin="0,10,0,0" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Margin="20,20,20,20">
+                    <Button x:Name="btn_start" Text="Alışverişe Başla" FontSize="25" CornerRadius="30" HeightRequest="60" BackgroundColor="Transparent" FontFamily="{StaticResource BebasNeue-Regular}" TextColor="White" Clicked="Btn_start_OnClicked"/>
+                    <Button x:Name="btn_iptal" IsVisible="False" Text="Alışverişi İptal Et" FontSize="15" CornerRadius="25" HeightRequest="50" BackgroundColor="Transparent" FontFamily="{StaticResource BebasNeue-Regular}" TextColor="White" Clicked="Btn_iptal_OnClicked"/>
+                    <Label x:Name="lb_sepet" IsVisible="False" Text="→ Sepetindeki ürünlere gitmek için kaydır →" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Transparent" FontFamily="{StaticResource Oswald}" TextColor="White" Margin="0,10,0,0"></Label>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

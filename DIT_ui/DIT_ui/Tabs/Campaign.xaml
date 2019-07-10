@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customs="clr-namespace:DIT_ui.Customs;assembly=DIT_ui"
+             xmlns:image1="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:models1="clr-namespace:DIT_ui.Models"
+             x:Class="DIT_ui.Tabs.Campaign"
+             BackgroundColor="#082631"
+             Visual="Material">
+    <ContentPage.Title> Kampanyalar </ContentPage.Title>
+      
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar  x:Name="searchText"  BackgroundColor="#082631" Placeholder="Kampanya ara..." PlaceholderColor="White" FontSize="20" TextColor="White" TextChanged="SearchBar_OnTextChanged" Opacity="1" HeightRequest="40"></SearchBar>
+
+            <ListView x:Name="lv_kampanya" HasUnevenRows="true" IsPullToRefreshEnabled="True" SeparatorColor="White" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <customs:CustomViewCell SelectedItemBackgroundColor="#ffe100">
+                            <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Margin="20,10,20,10" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                
+                                    <StackLayout Grid.Column="0">
+                                        <image1:CircleImage Source="sale.png" BorderColor="#ffe100" BorderThickness="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" HeightRequest="80"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Grid.Column="1" Margin="20,5,0,0" >
+                                        <Label Text="{Binding productName}"  FontFamily="{StaticResource Oswald}" FontSize="25" TextColor="Black"/>
+                                        <Label Text="{Binding campaignDetail}"  FontFamily="{StaticResource Oswald}" FontSize="20" TextColor="Black"/>
+                                        <Label x:Name="lb_gün" Text="{Binding validationTime, StringFormat='Son Gün: {0}'}"  FontFamily="{StaticResource Oswald}" VerticalTextAlignment="End" HorizontalTextAlignment="Start"  FontSize="15" TextColor="Silver"/>
+                                    </StackLayout>
+                           
+                                </Grid>
+                            </Frame>
+                        </customs:CustomViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

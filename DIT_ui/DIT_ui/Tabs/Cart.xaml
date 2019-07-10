@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:DIT_ui.Models;assembly=DIT_ui"
+             xmlns:customs="clr-namespace:DIT_ui.Customs;assembly=DIT_ui"
+             x:Class="DIT_ui.Tabs.Cart"
+             BackgroundColor="#082631"
+             Visual="Material">
+    <ContentPage.Title>Sepet</ContentPage.Title>
+
+    <ContentPage.Content>
+        <StackLayout >
+            <SearchBar  x:Name="searchText"  BackgroundColor="#082631" Placeholder="Ürün ara..." PlaceholderColor="White" FontSize="20" TextColor="White"  Opacity="1" TextChanged="SearchBar_OnTextChanged" HeightRequest="40"></SearchBar>
+            <ListView x:Name="lv_ürün" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" HasUnevenRows="true" ItemTapped="Lv_ürün_OnItemTapped" SeparatorColor="White"  IsVisible="True" SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <customs:CustomViewCell SelectedItemBackgroundColor="#082631">
+
+                            <Frame BackgroundColor="White" HasShadow="True" Margin="15,10,15,10" CornerRadius="10" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Grid.Column="0">
+                                        <Image Source="{Binding productUrl}"  VerticalOptions="FillAndExpand" WidthRequest="70" Aspect="AspectFit" HorizontalOptions="FillAndExpand"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Vertical" Margin="10,5,20,0" Grid.Column="1">
+                                        <Label Text="{Binding productName}"  FontFamily="{StaticResource BebasNeue-Regular}" FontSize="25" TextColor="Black"/>
+                                        <Label Text="{Binding productWeight,StringFormat='Gramaj: {0} kg'}"  FontFamily="{StaticResource Oswald}" FontSize="15" TextColor="Silver"/>
+                                        <Label Text="{Binding productAmount, StringFormat='Adet: {0}'}"  FontFamily="{StaticResource Oswald}" FontSize="15" TextColor="Silver"/>
+                                    </StackLayout>
+
+                                    <StackLayout  Grid.Column="2" VerticalOptions="End" HorizontalOptions="EndAndExpand">
+                                        <Label Text="{Binding productPrice, StringFormat='{0} TL'}" FontAttributes="Bold" FontFamily="{StaticResource Oswald}" VerticalTextAlignment="End" HorizontalTextAlignment="End" FontSize="30" TextColor="Black"/>
+                                    </StackLayout>
+
+                                    <StackLayout  Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="End" Margin="50,0,0,10">
+                                        <Button x:Name="btn_remove" Text="X" HeightRequest="32" WidthRequest="32" CornerRadius="16" Margin="20,0,20,0"  FontAttributes="Bold" BorderWidth="2" BorderColor="Red" BackgroundColor="Transparent" TextColor="Red" FontSize="15" CommandParameter="{Binding shoppingCartId}" Clicked="Btn_remove_OnClicked"/>
+                                    </StackLayout>
+
+                                </Grid>
+                            </Frame>
+                        </customs:CustomViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Frame BackgroundColor="#082631" VerticalOptions="EndAndExpand"  HorizontalOptions="EndAndExpand" HasShadow="True"  BorderColor="White" HeightRequest="70" WidthRequest="500"  Margin="10,0,10,5">
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout  Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label x:Name="lb_tutar" FontSize="20" FontFamily="{StaticResource Oswald}" HorizontalTextAlignment="Center" Margin="0,-5,0,0" TextColor="White" Text="{Binding ., StringFormat='ÖDENECEK TUTAR= {0} TL'}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="btn_ok" Grid.Column="1" VerticalOptions="End" FontSize="15" HeightRequest="40" WidthRequest="40" CornerRadius="20" Margin="20,0,20,0" Text="✔" BackgroundColor="Transparent" BorderWidth="2" BorderColor="Green" HorizontalOptions="End" Clicked="Btn_ok_OnClicked"/>
+                        <Button x:Name="btn_addCart" Grid.Column="2" VerticalOptions="End" FontSize="20" Text="+" HeightRequest="40" WidthRequest="40" CornerRadius="20" BackgroundColor="Transparent" BorderWidth="2" BorderColor="Blue" HorizontalOptions="EndAndExpand" Clicked="Btn_addCart_OnClicked"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

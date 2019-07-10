@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DIT_ui.Menu.FaturaDetay"
+             BackgroundColor="#082631"
+             Visual="Material">
+    <ContentPage.Content>
+        <Frame BackgroundColor="#051921" CornerRadius="20" Margin="20,20,20,20">
+            <StackLayout>
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="0">
+                        <Label x:Name="ft_faturaDetay" Text="Fatura Detayınız" TextColor="White" FontSize="40" FontFamily="{StaticResource BebasNeue-Regular}" HorizontalTextAlignment="Center" Margin="20,20,20,20"/>
+                        <Label x:Name="ft_tarih" Text="Tarih: " TextColor="White" FontSize="30" FontFamily="{StaticResource BebasNeue-Regular}" HorizontalTextAlignment="Start" Margin="20,0,20,0"/>
+                        <Label x:Name="ft_aciklama"  Text="Ayrıntı: " TextColor="White" FontSize="20" FontFamily="{StaticResource BebasNeue-Regular}" HorizontalTextAlignment="Start" Margin="20,0,20,0"/>
+                        <Label x:Name="ft_tutar"  Text="Tutar: " TextColor="White" FontSize="20" FontFamily="{StaticResource BebasNeue-Regular}" HorizontalTextAlignment="Start" Margin="20,0,20,0"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Margin="0,30,0,0">
+                        <Button x:Name="btn_mail" Text="Mail Olarak Al" CornerRadius="25" FontFamily="{StaticResource BebasNeue-Regular}" HeightRequest="50" BackgroundColor="Transparent"  TextColor="White" Clicked="Btn_mail_OnClicked" FontSize="25"/>
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

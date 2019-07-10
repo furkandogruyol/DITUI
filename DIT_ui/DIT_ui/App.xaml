@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DIT_ui.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="BebasNeue-Regular">
+                <On Platform="Android" Value="BebasNeue Regular.otf#Bebas Neue Regular"/>
+                <On Platform="iOS" Value="Bebas Neue Regular"/>
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="Oswald">
+                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald"/>
+                <On Platform="iOS" Value="Oswald"/>
+            </OnPlatform>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

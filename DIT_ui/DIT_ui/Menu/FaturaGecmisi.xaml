@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:DIT_ui.Models;assembly=DIT_ui"
+             xmlns:customs="clr-namespace:DIT_ui.Customs;assembly=DIT_ui"
+             x:Class="DIT_ui.Menu.FaturaGecmisi"
+             BackgroundColor="#082631"
+             Visual="Material">
+
+
+    <ContentPage.Content>
+        <Frame Margin="20,20,20,20" CornerRadius="20" BackgroundColor="#051921">
+            <ListView x:Name="lv_fatura" SeparatorColor="#ffe100" BackgroundColor="Transparent" HasUnevenRows="true" SelectionMode="Single" ItemSelected="Lv_fatura_OnItemSelected" IsVisible="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <customs:CustomViewCell SelectedItemBackgroundColor="#ffe100">
+
+                            <StackLayout Orientation="Vertical" Margin="10,10,20,10">
+                                <Label Text="{Binding shoppingDate, StringFormat='Tarih: {0}'}"  FontFamily="{StaticResource Oswald}" FontSize="25" TextColor="White"/>
+                                <Label Text="{Binding productAmount, StringFormat='Tutar: {0}'}"  FontFamily="{StaticResource Oswald}" FontSize="20" TextColor="Silver"/>
+                            </StackLayout>
+
+                        </customs:CustomViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+    </ContentPage.Content>
+    <ContentPage.Title>Fatura Geçmişim</ContentPage.Title>
+</ContentPage>

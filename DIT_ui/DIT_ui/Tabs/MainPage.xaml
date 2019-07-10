@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:tabs="clr-namespace:DIT_ui.Tabs;assembly=DIT_ui"
+            x:Class="DIT_ui.Tabs.MainPage" 
+            BarBackgroundColor="#082631"
+            NavigationPage.HasBackButton="False"
+            CurrentPageChanged="MainPage_OnCurrentPageChanged"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="#FFFFFF"
+>
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Fatura Geçmişim" Priority="0" Order="Secondary" Clicked="fatura_onclick"/>
+        <ToolbarItem Text ="Kampanya Bildirimleri" Priority="1" Order="Secondary" Clicked="kampanya_onclick"/>
+        <ToolbarItem Text="Bize Ulaşın" Priority="2" Order="Secondary" Clicked="biz_onclick"/>
+        <ToolbarItem Text="Çıkış Yap"  Priority="3" Order="Secondary" Clicked="cikis_onclick"/>
+    </TabbedPage.ToolbarItems>
+
+
+    <tabs:Profile Icon="ic_person.png"/>
+
+    <tabs:Cart Icon="ic_shopping_cart.png"/>
+
+    <tabs:Campaign Icon="ic_loyalty.png"/>
+
+    
+
+</TabbedPage>
+
+

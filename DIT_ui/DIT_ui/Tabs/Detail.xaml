@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DIT_ui.Tabs.Detail"
+             BackgroundColor="#082631"
+             NavigationPage.HasBackButton="False"
+             Visual="Material">
+    <!-->Bu tasarı gecici, bu yüzden fırsat buldugun bir anda değiştir.<!-->
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="White" HasShadow="True" Margin="20,20,20,20">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout>
+                        <Image  x:Name="img_ürün" WidthRequest="200" Aspect="AspectFit"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label x:Name="lb_adi" FontAttributes="Bold" Text="Ürün Adı: " FontFamily="{StaticResource Oswald}" FontSize="30" TextColor="#082631"/>
+                        <Entry x:Name="tb_miktar" BackgroundColor="Transparent"   FontFamily="{StaticResource Oswald}" FontSize="30" Placeholder="Adet "  PlaceholderColor="#082631" TextColor="#082631" HorizontalOptions="FillAndExpand"/>
+
+                        <Label x:Name="lb_gram" Text="Ürün Gramajı: " FontFamily="{StaticResource Oswald}" FontSize="30" TextColor="#082631"/>
+                        <Label x:Name="lb_fiyat" Text="Ürün Fiyatı: " FontFamily="{StaticResource Oswald}" FontSize="30" TextColor="#082631"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="Center" Margin="0,20,0,0">
+                        <Button  x:Name="btn_addToCart" Text="Sepete Ekle" FontAttributes="Bold" CornerRadius="10" BackgroundColor="#082631"  Clicked="Btn_addToCart_OnClicked" TextColor="White" FontSize="20"/>
+                        <Button  x:Name="btn_back" Text="Geri Dön" FontAttributes="Bold" CornerRadius="10" BackgroundColor="#082631"  Clicked="Btn_back_OnClicked" TextColor="White" FontSize="20"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Image Source="DIT.png" WidthRequest="50" HeightRequest="50" VerticalOptions="CenterAndExpand" Aspect="AspectFit" Margin="0,0,0,10"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
